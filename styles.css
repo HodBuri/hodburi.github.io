@@ -5,6 +5,7 @@
     --secondary-color: #ac78d6;
     --highlight-color: #FFD95A;
     --text-light: #fff;
+    --text-light-grey: #c9c9c9;
     --text-grey: #474747;
     --text-dark: #020202;
 }
@@ -43,23 +44,34 @@ nav ul {
     justify-content: flex-end;
     list-style-type: none;
     padding: 10px;
-    margin-right: 56px; /* adjust as needed */
-    margin-top: 4px;
+    margin-right: 20px; /* adjust as needed */
+    margin-top: 29px; /* move buttons down */
 }
 
 nav ul li {
     display: inline;
-    margin-right: 50px;
+    margin-right: 65px;
 }
 
 nav ul li a {
-    color: var(--text-light);
+    color: var(--text-light-grey);
     text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px; 
+    font-size: 0.83em; /* size of the buttons */
+    font-family: Arial, sans-serif;
+    transition: color 0.3s ease; /* smooth color transition */
 }
+
+nav ul li a:hover {
+    color: var(--highlight-color); /* color when hovering */
+}
+
 
 h1, h2 {
     color: var(--text-light);
 }
+
 
 section {
     margin: 20px;
@@ -75,6 +87,20 @@ section {
 .column {
     flex: 1;
 }
+
+.fade-out {
+    -webkit-mask-image: linear-gradient(to right, 
+        transparent, 
+        white 10%, 
+        white 90%, 
+        transparent);
+    mask-image: linear-gradient(to right, 
+        transparent, 
+        white 10%, 
+        white 90%, 
+        transparent);
+}
+
 
 #center-column {
     text-align: right;
@@ -97,7 +123,9 @@ section {
     white-space: pre-wrap;
 }
 
-
+#magicText span:hover {
+    color: var(--text-light-grey);
+}
 
 #about {
     background-color: var(--secondary-color);
@@ -111,6 +139,9 @@ section {
     background-color: var(--primary-color);
 }
 
+#contact h2 {
+    color: var(--background-color);
+}
 
 footer {
     background-color: var(--background-color);
